@@ -1,6 +1,7 @@
 import { isArray, isEmpty } from 'lodash'
 import Link from 'next/link'
 import { sanitize } from '../utils/functions'
+import { getIconComponentsByName as getIconComponentByName } from '../utils/icons-map'
 
 function Footer ({ footer, footerMenus }) {
   return (
@@ -38,14 +39,28 @@ function Footer ({ footer, footerMenus }) {
         </div>
       </div>
 
-      <div class='flex flex-wrap overflow-hidden xl:-mx-2 mt-5'>
-        <div class='w-full overflow-hidden xl:my-2 xl:px-2 xl:w-1/2'>
+      <div className='flex flex-wrap overflow-hidden xl:-mx-2 mt-5'>
+        <div className='w-full overflow-hidden xl:my-2 xl:px-2 xl:w-1/2'>
           {/* Copyright */}
           {footer?.copyrightText}
         </div>
 
-        <div class='w-full overflow-hidden xl:my-2 xl:px-2 xl:w-1/2'>
-          Social icons
+        <div className='w-full overflow-hidden xl:my-2 xl:px-2 xl:w-1/2 mt-5'>
+          <div className='flex lg:justify-end'>
+            {!isEmpty(footer?.socialLinks) && isArray(footer?.socialLinks)
+              ? footer?.socialLinks.map(socialLink => {
+                  return (
+                    <ul className='flex items-center'>
+                      <li className='h-6 w-6 ml-4'>
+                        <a href={socialLink?.iconUrl}>
+                          {getIconComponentByName(socialLink?.iconName)}
+                        </a>
+                      </li>
+                    </ul>
+                  )
+                })
+              : null}
+          </div>
         </div>
       </div>
     </footer>

@@ -5,7 +5,8 @@
   "scripts": {
     "dev": "NODE_OPTIONS='--inspect' next dev",
     "build": "next build",
-    "start": "next start"
+    "start": "next start",
+    "svg": "svgr -d src/components/icons src/components/icons/svgs"
   },
   "dependencies": {
     "@apollo/client": "^3.1.4",
@@ -25,6 +26,7 @@
     "tailwindcss": "^2.0.2"
   },
   "devDependencies": {
+    "@svgr/cli": "^5.5.0",
     "cypress": "^5.1.0"
   }
 }
