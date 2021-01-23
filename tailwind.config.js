@@ -9,6 +9,12 @@ module.exports = {
   darkMode: false, // or 'media' or 'class'
   theme: {
     extend: {
+      height: {
+        'almost-screen': 'calc(-12rem + 100vh)'
+      },
+      backgroundImage: {
+        'hero-image': "url('/img/gbt-hero-image.png')"
+      },
       fontFamily: {
         sans: ['Josefin Sans', ...defaultTheme.fontFamily.sans],
         serif: ['Tienne', ...defaultTheme.fontFamily.serif],
@@ -92,6 +98,28 @@ module.exports = {
           700: '#394142',
           800: '#252d2e',
           900: '#11191a'
+        },
+        gbtblue: {
+          100: '#f4f7fb',
+          200: '#b0c5de',
+          300: '#6b92c2',
+          400: '#3c6290',
+          500: '#1f334c',
+          600: '#1c2e44',
+          700: '#18273a',
+          800: '#13202f',
+          900: '#0f1824'
+        },
+        'gbt-orange': {
+          '100': '#fffdfa',
+          '200': '#ffedcc',
+          '300': '#ffdd9e',
+          '400': '#ffcf75',
+          '500': '#ffbf47',
+          '600': '#ffa600',
+          '700': '#b87700',
+          '800': '#704900',
+          '900': '#291b00'
         }
       }
     }

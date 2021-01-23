@@ -5,7 +5,7 @@ import { useState } from 'react'
 const NavItem = ({ label, path }) => {
   return (
     <Link href={path}>
-      <a className='block mt-4 lg:inline-block lg:mt-0 text-ssanyuwork-800 hover:text-ssanyuwork-400 mr-4 text-base'>
+      <a className='block mt-4 lg:inline-block lg:mt-0 text-gbt-orange-300 hover:text-ssanyuwork-400 mr-4 text-xl'>
         {label}
       </a>
     </Link>
@@ -20,18 +20,18 @@ function Nav ({ header, headerMenus }) {
   const [isMenuVisible, setMenuVisibility] = useState(false)
 
   return (
-    <nav className='flex items-center justify-between flex-wrap bg-white border-b-2 border-ssanyugray-100 p-4'>
-      <div className='flex items-center flex-no-shrink  text-ssanyuskin-500 text-2xl mr-6'>
+    <nav className='flex items-center justify-between flex-wrap bg-gbtblue-400 border-b-0 border-ssanyugray-100 p-4'>
+      <div className='flex items-center flex-no-shrink  text-gbt-orange-300 text-2xl mr-6'>
         <img
           src={header?.siteLogoUrl}
           alt='ssanyu logo'
           className='h-12 w-12 mr-2'
         />
         <div className='flex flex-col items-start'>
-          <span className='font-semiboldtext-xl font-sans font-semibold tracking-tight antialiased'>
+          <span className='text-2xl font-sans font-semibold tracking-tight antialiased'>
             {header?.siteTitle}
           </span>
-          <span className='text-sm'>{header?.siteTagLine}</span>
+          {/* <span className='text-base'>{header?.siteTagLine}</span> */}
         </div>
       </div>
       <div className='block lg:hidden'>
@@ -68,14 +68,14 @@ function Nav ({ header, headerMenus }) {
           </div>
         ) : null}
       </div>
-      <div>
+      {/* <div>
         <a
           href='#'
           className='inline-block text-sm px-4 py-2 leading-none border rounded text-ssanyuskin-500 border-ssanyuskin-500 hover:border-transparent hover:text-ssanyulove-500 hover:bg-ssanyuwork-100 mt-4 lg:mt-0'
         >
           Contact Me
         </a>
-      </div>
+      </div> */}
     </nav>
   )
 }
